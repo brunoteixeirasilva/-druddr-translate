@@ -1,6 +1,23 @@
+var fs = require("fs");
+
 var langFile = (exports.langFile = null);
 
 var _memoise = [];
+
+function readJsonFile(fileRef) {
+	var fileData = fs.readFileSync(fileRef);
+
+	//General failure
+	if (!fileData) {
+		throw Error("Couldn't read file '" + fileRef + "'.");
+	}
+
+	//Parsing found file
+	//Placing at the right variables
+	langFile = fileData = exports.langFile = JSON.parse(fileData);
+
+	return fileData;
+}
 
 /**
  * Manages loading the file for usage
@@ -13,7 +30,8 @@ var _memoise = [];
  */
 exports.loadLanguageFile = function(fileRef) {
 	if (_memoise["loadLanguageFile"] !== fileRef || !langFile) {
-		langFile = exports.langFile = require(fileRef);
+		// langFile = exports.langFile = require(fileRef);
+		readJsonFile(fileRef);
 
 		//Sets method already resolved to the given param
 		_memoise["loadLanguageFile"] = fileRef;
