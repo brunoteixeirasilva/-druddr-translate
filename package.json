@@ -1,27 +1,27 @@
 {
-  "name": "@druddr/translate",
-  "version": "0.0.1",
-  "description": "JSON-based functional translate support tool",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brunoteixeirasilva/druddr-translate.git"
-  },
-  "keywords": [
-    "druddr",
-    "tool",
-    "translate",
-    "node",
-    "functional",
-    "js"
-  ],
-  "author": "druddr.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brunoteixeirasilva/druddr-translate/issues"
-  },
-  "homepage": "https://github.com/brunoteixeirasilva/druddr-translate#readme"
+	"name": "@druddr/translate",
+	"version": "0.0.2",
+	"description": "JSON-based functional translate support tool",
+	"main": "index.js",
+	"scripts": {
+		"test": "npm run test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/brunoteixeirasilva/druddr-translate.git"
+	},
+	"keywords": [
+		"druddr",
+		"tool",
+		"translate",
+		"node",
+		"functional",
+		"js"
+	],
+	"author": "druddr.com",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/brunoteixeirasilva/druddr-translate/issues"
+	},
+	"homepage": "https://github.com/brunoteixeirasilva/druddr-translate#readme"
 }
