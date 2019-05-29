@@ -5,7 +5,8 @@ var langFile = (exports.langFile = null);
 var _memoise = [];
 
 function readJsonFile(fileRef) {
-	var fileData = fs.readFileSync(fileRef);
+	// var fileData = fs.readFileSync(fileRef);
+	var fileData = require(fileRef);
 
 	//General failure
 	if (!fileData) {
@@ -14,7 +15,8 @@ function readJsonFile(fileRef) {
 
 	//Parsing found file
 	//Placing at the right variables
-	langFile = fileData = exports.langFile = JSON.parse(fileData);
+	// langFile = fileData = exports.langFile = JSON.parse(fileData);
+	langFile = exports.langFile = fileData;
 
 	return fileData;
 }

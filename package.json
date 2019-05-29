@@ -1,11 +1,10 @@
 {
 	"name": "@druddr/translate",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "JSON-based functional translate support tool",
 	"main": "index.js",
 	"scripts": {
-		"test": "npm run test",
-		"publish": "npm publish --access public"
+		"test": "npm run test"
 	},
 	"repository": {
 		"type": "git",
