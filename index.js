@@ -1,5 +1,5 @@
-var langFile = (exports.langFile = null);
-
+exports.langFile = null;
+var langFile = null;
 var _memoise = [];
 
 function readJsonFile(fileOrRef) {
@@ -14,7 +14,7 @@ function readJsonFile(fileOrRef) {
 	//Parsing found file
 	//Placing at the right variables
 	// langFile = fileData = exports.langFile = JSON.parse(fileData);
-	langFile = exports.langFile = fileData;
+	exports.langFile = langFile = fileData;
 
 	return fileData;
 }

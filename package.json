@@ -1,6 +1,6 @@
 {
 	"name": "@druddr/translate",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "JSON-based functional translate support tool",
 	"main": "index.js",
 	"scripts": {
