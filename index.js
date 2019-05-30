@@ -19,7 +19,7 @@ function readJsonFile(fileOrRef) {
 }
 
 /**
- * Manages loading the file for usage
+ * [compulsory] Manages loading the file for usage
  *
  * @description Created the function
  * @author brunoteixeirasilva (druddr.com)
