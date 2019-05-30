@@ -1,12 +1,10 @@
-const fs = require("fs");
-
 var langFile = (exports.langFile = null);
 
 var _memoise = [];
 
-function readJsonFile(fileRef) {
+function readJsonFile(fileOrRef) {
 	// var fileData = fs.readFileSync(fileRef);
-	var fileData = require(fileRef);
+	var fileData = typeof fileOrRef === "object" ? fileOrRef : require(fileRef);
 
 	//General failure
 	if (!fileData) {
@@ -28,19 +26,19 @@ function readJsonFile(fileRef) {
  * @author brunoteixeirasilva (druddr.com)
  * @version 1.0
  *
- * @param {string} fileRef The file which will be loaded
+ * @param {string} fileOrRef The file which will be loaded
  */
-exports.loadLanguageFile = function(fileRef) {
-	if (_memoise["loadLanguageFile"] !== fileRef || !langFile) {
+export function loadLanguageFile(fileOrRef) {
+	if (_memoise["loadLanguageFile"] !== fileOrRef || !langFile) {
 		// langFile = exports.langFile = require(fileRef);
-		readJsonFile(fileRef);
+		readJsonFile(fileOrRef);
 
 		//Sets method already resolved to the given param
-		_memoise["loadLanguageFile"] = fileRef;
+		_memoise["loadLanguageFile"] = fileOrRef;
 	}
 
 	return langFile;
-};
+}
 
 /**
  * Exposes the passed key (with our w/o params) as a text message; if
@@ -53,7 +51,7 @@ exports.loadLanguageFile = function(fileRef) {
  * @param {Object} params object where props are the key-value pair at the text message;
  * E.g. { userName: 'John' } will look for a prop written as "${userName}"
  */
-exports.translate = function(key, params = null) {
+export function translate(key, params = null) {
 	let result;
 
 	//File was not loaded yet
@@ -78,7 +76,7 @@ exports.translate = function(key, params = null) {
 		});
 
 	return result;
-};
+}
 
 /**
  * [try-catch-wrapped] Exposes the passed key (with our w/o params) as a text message; if
@@ -92,7 +90,7 @@ exports.translate = function(key, params = null) {
  * 							E.g. { userName: 'John' } will look for a prop written as "${userName}"
  * @param {Boolean} exposeException Will expose (rethrow an error) if =>true, encapsulate if =>false
  */
-exports.tryTranslate = function(key, params = null, exposeException = false) {
+export function tryTranslate(key, params = null, exposeException = false) {
 	let result = false;
 
 	try {
@@ -107,4 +105,4 @@ exports.tryTranslate = function(key, params = null, exposeException = false) {
 	//Or successfully found
 	//Will return the resultant extent
 	return result;
-};
+}
