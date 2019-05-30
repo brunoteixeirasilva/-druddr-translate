@@ -1,6 +1,5 @@
-exports.langFile = null;
-var langFile = null;
-var _memoise = [];
+let langFile = null,
+	_memoise = [];
 
 function readJsonFile(fileOrRef) {
 	// var fileData = fs.readFileSync(fileRef);
@@ -14,7 +13,7 @@ function readJsonFile(fileOrRef) {
 	//Parsing found file
 	//Placing at the right variables
 	// langFile = fileData = exports.langFile = JSON.parse(fileData);
-	exports.langFile = langFile = fileData;
+	langFile = fileData;
 
 	return fileData;
 }
